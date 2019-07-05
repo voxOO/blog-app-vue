@@ -5,6 +5,10 @@
                 <li class="nav-item">
                     <router-link to="/posts">Posts</router-link>
                 </li>
+              
+                <li>
+                    <router-link to="/add">Add Post</router-link>
+                </li>
         </ul>
         </nav>
         <router-view />
