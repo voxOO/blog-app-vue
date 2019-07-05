@@ -1,17 +1,23 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+   <div>
+        <nav class="navbar navbar-expand-sm bg-light">
+        <ul class="navbar-nav">
+                <li class="nav-item">
+                    <router-link to="/posts">Posts</router-link>
+                </li>
+        </ul>
+        </nav>
+        <router-view />
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppPosts from './components/AppPosts.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    AppPosts
   }
 }
 </script>
@@ -23,6 +29,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
