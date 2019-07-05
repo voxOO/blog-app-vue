@@ -6,8 +6,11 @@ export default class PostService {
     }
 
     getAll() {
-        console.log("dfd")
         return axios.get('posts');
+    }
+
+    getSinglePost (id) {
+        return axios.get(`posts/${id}`);
     }
 }
 

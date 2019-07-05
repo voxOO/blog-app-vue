@@ -12,13 +12,9 @@
 </template>
 
 <script>
-import AppPosts from './components/AppPosts.vue'
 
 export default {
   name: 'app',
-  components: {
-    AppPosts
-  }
 }
 </script>
 
