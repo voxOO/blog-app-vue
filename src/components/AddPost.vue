@@ -4,11 +4,11 @@
         <form @submit.prevent="submitPost">
             <div class="form-group">
                 <label for="title">Title:</label>
-                <input type="text" id="title" class="form-control" v-model="newPost.title" required>
+                <input type="text" id="title" class="form-control" v-model="newPost.title" minlenght=2 required>
             </div>
             <div class="form-group">
                  <label for="text">Text:</label>
-                <input type="text" id="text" class="form-control" v-model="newPost.text" required>
+                <input type="text" id="text" class="form-control" v-model="newPost.text" maxlenght=300 required>
             </div>
             <div class="form-group">
                 <button class="btn btn-primary">Add Post</button>
