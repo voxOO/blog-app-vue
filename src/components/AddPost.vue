@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <h3>Add new post</h3>
-        <form action="">
+        <form @submit.prevent="submitPost">
             <div class="form-group">
                 <label for="title">Title:</label>
                 <input type="text" id="title" class="form-control" v-model="newPost.title" required>
@@ -33,7 +33,8 @@ export default {
     methods: {
         submitPost () {
             postService.submitPost(this.newPost)
-            .then({ path: '/', redirect: '/posts'})
+            //.then({ path: '/', redirect: '/posts'})
+            .then( this.$router.push('/posts'))
             .catch(e=> {
            this.errors.push(e)
        })
