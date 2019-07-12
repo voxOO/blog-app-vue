@@ -13,6 +13,9 @@
             <div class="form-group">
                 <button class="btn btn-primary">Add Post</button>
             </div>
+            <div class="form-grou">
+                <button class="btn btn-secondary" @click="resetForm">Reset</button>
+            </div>
         </form>
     </div>
 </template>
@@ -38,6 +41,10 @@ export default {
             .catch(e=> {
            this.errors.push(e)
        })
+    },
+    resetForm () {
+        this.newPost.title= '';
+        this.newPost.text= '';
     }
   }
 }
