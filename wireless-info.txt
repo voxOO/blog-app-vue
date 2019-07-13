@@ -1,0 +1,1154 @@
+
+########## wireless info START ##########
+
+Report from: 13 Jul 2019 14:59 CEST +0200
+
+Booted last: 13 Jul 2019 00:00 CEST +0200
+
+Script from: 22 Oct 2018 03:34 UTC +0000
+
+##### release ###########################
+
+Distributor ID:	Ubuntu
+Description:	Ubuntu 18.04.2 LTS
+Release:	18.04
+Codename:	bionic
+
+##### kernel ############################
+
+Linux 4.18.0-25-generic #26~18.04.1-Ubuntu SMP Thu Jun 27 07:28:31 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+Parameters: ro, quiet, splash, vt.handoff=1
+
+##### desktop ###########################
+
+Ubuntu
+
+##### lspci #############################
+
+07:00.0 Network controller [0280]: Broadcom Inc. and subsidiaries BCM4313 802.11bgn Wireless Network Adapter [14e4:4727] (rev 01)
+	Subsystem: Hewlett-Packard Company BCM4313 802.11bgn Wireless Network Adapter [103c:1795]
+	Kernel driver in use: bcma-pci-bridge
+
+08:00.0 Ethernet controller [0200]: Realtek Semiconductor Co., Ltd. RTL810xE PCI Express Fast Ethernet controller [10ec:8136] (rev 05)
+	Subsystem: Hewlett-Packard Company RTL810xE PCI Express Fast Ethernet controller [103c:183a]
+	Kernel driver in use: r8169
+
+##### lsusb #############################
+
+Bus 002 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 003: ID 0a5c:21e3 Broadcom Corp. HP Portable Valentine
+Bus 001 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+##### PCMCIA card info ##################
+
+##### rfkill ############################
+
+0: phy0: Wireless LAN
+	Soft blocked: no
+	Hard blocked: no
+1: hci0: Bluetooth
+	Soft blocked: yes
+	Hard blocked: no
+
+##### secure boot #######################
+
+'mokutil' is not installed (package "mokutil").
+
+##### lsmod #############################
+
+wmi_bmof               16384  0
+hp_wmi                 16384  0
+sparse_keymap          16384  1 hp_wmi
+brcmsmac              565248  0
+cordic                 16384  1 brcmsmac
+brcmutil               16384  1 brcmsmac
+b43                   413696  0
+mac80211              802816  2 b43,brcmsmac
+cfg80211              667648  3 b43,mac80211,brcmsmac
+wmi                    24576  2 hp_wmi,wmi_bmof
+ssb                    57344  1 b43
+bcma                   57344  3 b43,brcmsmac
+
+##### interfaces ########################
+
+[/etc/network/interfaces]
+auto lo
+iface lo inet loopback
+
+##### ifconfig ##########################
+
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback <MAC address> brd <MAC address>
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eno1: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
+    link/ether <MAC 'eno1' [IF1]> brd <MAC address>
+3: wlp7s0b1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether <MAC 'wlp7s0b1' [IF2]> brd <MAC address>
+    inet 192.168.0.12/24 brd 192.168.0.255 scope global dynamic noprefixroute wlp7s0b1
+       valid_lft 3287sec preferred_lft 3287sec
+    inet6 fe80::ba85:ab9b:e2ab:afbc/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+
+##### iwconfig ##########################
+
+eno1      no wireless extensions.
+
+lo        no wireless extensions.
+
+wlp7s0b1  IEEE 802.11  ESSID:"Vobeta"  
+          Mode:Managed  Frequency:2.412 GHz  Access Point: <MAC 'Vobeta' [AC1]>   
+          Bit Rate=39 Mb/s   Tx-Power=19 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:off
+          Link Quality=68/70  Signal level=-42 dBm  
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:10802  Invalid misc:5458   Missed beacon:0
+
+##### route #############################
+
+default via 192.168.0.1 dev wlp7s0b1 proto dhcp metric 600 
+169.254.0.0/16 dev wlp7s0b1 scope link metric 1000 
+192.168.0.0/24 dev wlp7s0b1 proto kernel scope link src 192.168.0.12 metric 600 
+
+##### resolv.conf #######################
+
+[777 root '/etc/resolv.conf' -> '../run/systemd/resolve/stub-resolv.conf']
+
+nameserver 127.0.0.53
+options edns0
+
+##### network managers ##################
+
+Installed:
+
+	NetworkManager
+
+Running:
+
+root       967     1  0 08:56 ?        00:00:04 /usr/sbin/NetworkManager --no-daemon
+
+##### NetworkManager info ###############
+
+GENERAL.DEVICE:                         wlp7s0b1
+GENERAL.TYPE:                           wifi
+GENERAL.NM-TYPE:                        NMDeviceWifi
+GENERAL.VENDOR:                         Broadcom Limited
+GENERAL.PRODUCT:                        BCM4313 802.11bgn Wireless Network Adapter
+GENERAL.DRIVER:                         brcmsmac
+GENERAL.DRIVER-VERSION:                 4.18.0-25-generic
+GENERAL.FIRMWARE-VERSION:               N/A
+GENERAL.HWADDR:                         <MAC 'wlp7s0b1' [IF2]>
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          100 (connected)
+GENERAL.REASON:                         0 (No reason given)
+GENERAL.UDI:                            /sys/devices/pci0000:00/0000:00:1c.0/0000:07:00.0/bcma0:1/net/wlp7s0b1
+GENERAL.IP-IFACE:                       wlp7s0b1
+GENERAL.IS-SOFTWARE:                    no
+GENERAL.NM-MANAGED:                     yes
+GENERAL.AUTOCONNECT:                    yes
+GENERAL.FIRMWARE-MISSING:               no
+GENERAL.NM-PLUGIN-MISSING:              no
+GENERAL.PHYS-PORT-ID:                   --
+GENERAL.CONNECTION:                     Vobeta
+GENERAL.CON-UUID:                       48e61c26-b29b-464a-801c-84e93cc717dd
+GENERAL.CON-PATH:                       /org/freedesktop/NetworkManager/ActiveConnection/1
+GENERAL.METERED:                        no (guessed)
+CAPABILITIES.CARRIER-DETECT:            no
+CAPABILITIES.SPEED:                     39 Mb/s
+CAPABILITIES.IS-SOFTWARE:               no
+CAPABILITIES.SRIOV:                     no
+WIFI-PROPERTIES.WEP:                    yes
+WIFI-PROPERTIES.WPA:                    yes
+WIFI-PROPERTIES.WPA2:                   yes
+WIFI-PROPERTIES.TKIP:                   yes
+WIFI-PROPERTIES.CCMP:                   yes
+WIFI-PROPERTIES.AP:                     yes
+WIFI-PROPERTIES.ADHOC:                  yes
+WIFI-PROPERTIES.2GHZ:                   yes
+WIFI-PROPERTIES.5GHZ:                   no
+IP4.ADDRESS[1]:                         192.168.0.12/24
+IP4.GATEWAY:                            192.168.0.1
+IP4.ROUTE[1]:                           dst = 0.0.0.0/0, nh = 192.168.0.1, mt = 600
+IP4.ROUTE[2]:                           dst = 192.168.0.0/24, nh = 0.0.0.0, mt = 600
+IP4.ROUTE[3]:                           dst = 169.254.0.0/16, nh = 0.0.0.0, mt = 1000
+IP4.DNS[1]:                             89.216.1.30
+IP4.DNS[2]:                             89.216.1.50
+DHCP4.OPTION[1]:                        requested_subnet_mask = 1
+DHCP4.OPTION[2]:                        requested_rfc3442_classless_static_routes = 1
+DHCP4.OPTION[3]:                        subnet_mask = 255.255.255.0
+DHCP4.OPTION[4]:                        domain_name_servers = 89.216.1.30 89.216.1.50
+DHCP4.OPTION[5]:                        ip_address = 192.168.0.12
+DHCP4.OPTION[6]:                        requested_static_routes = 1
+DHCP4.OPTION[7]:                        dhcp_server_identifier = 192.168.0.1
+DHCP4.OPTION[8]:                        default_ip_ttl = 64
+DHCP4.OPTION[9]:                        requested_time_offset = 1
+DHCP4.OPTION[10]:                       time_offset = 0
+DHCP4.OPTION[11]:                       requested_interface_mtu = 1
+DHCP4.OPTION[12]:                       dhcp_rebinding_time = 3150
+DHCP4.OPTION[13]:                       requested_domain_name_servers = 1
+DHCP4.OPTION[14]:                       dhcp_message_type = 5
+DHCP4.OPTION[15]:                       broadcast_address = 192.168.0.255
+DHCP4.OPTION[16]:                       requested_broadcast_address = 1
+DHCP4.OPTION[17]:                       routers = 192.168.0.1
+DHCP4.OPTION[18]:                       dhcp_renewal_time = 1800
+DHCP4.OPTION[19]:                       requested_domain_name = 1
+DHCP4.OPTION[20]:                       requested_routers = 1
+DHCP4.OPTION[21]:                       expiry = 1563026054
+DHCP4.OPTION[22]:                       requested_wpad = 1
+DHCP4.OPTION[23]:                       requested_netbios_scope = 1
+DHCP4.OPTION[24]:                       requested_ms_classless_static_routes = 1
+DHCP4.OPTION[25]:                       requested_netbios_name_servers = 1
+DHCP4.OPTION[26]:                       network_number = 192.168.0.0
+DHCP4.OPTION[27]:                       requested_domain_search = 1
+DHCP4.OPTION[28]:                       requested_ntp_servers = 1
+DHCP4.OPTION[29]:                       next_server = 192.168.0.1
+DHCP4.OPTION[30]:                       dhcp_lease_time = 3600
+DHCP4.OPTION[31]:                       requested_host_name = 1
+IP6.ADDRESS[1]:                         fe80::ba85:ab9b:e2ab:afbc/64
+IP6.GATEWAY:                            --
+IP6.ROUTE[1]:                           dst = ff00::/8, nh = ::, mt = 256, table=255
+IP6.ROUTE[2]:                           dst = fe80::/64, nh = ::, mt = 256
+IP6.ROUTE[3]:                           dst = fe80::/64, nh = ::, mt = 600
+CONNECTIONS.AVAILABLE-CONNECTION-PATHS: /org/freedesktop/NetworkManager/Settings/{1}
+CONNECTIONS.AVAILABLE-CONNECTIONS[1]:   48e61c26-b29b-464a-801c-84e93cc717dd | Vobeta
+
+GENERAL.DEVICE:                         eno1
+GENERAL.TYPE:                           ethernet
+GENERAL.NM-TYPE:                        NMDeviceEthernet
+GENERAL.VENDOR:                         Realtek Semiconductor Co., Ltd.
+GENERAL.PRODUCT:                        RTL810xE PCI Express Fast Ethernet controller
+GENERAL.DRIVER:                         r8169
+GENERAL.DRIVER-VERSION:                 2.3LK-NAPI
+GENERAL.FIRMWARE-VERSION:               --
+GENERAL.HWADDR:                         <MAC 'eno1' [IF1]>
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          20 (unavailable)
+GENERAL.REASON:                         2 (Device is now managed)
+GENERAL.UDI:                            /sys/devices/pci0000:00/0000:00:1c.1/0000:08:00.0/net/eno1
+GENERAL.IP-IFACE:                       --
+GENERAL.IS-SOFTWARE:                    no
+GENERAL.NM-MANAGED:                     yes
+GENERAL.AUTOCONNECT:                    yes
+GENERAL.FIRMWARE-MISSING:               no
+GENERAL.NM-PLUGIN-MISSING:              no
+GENERAL.PHYS-PORT-ID:                   --
+GENERAL.CONNECTION:                     --
+GENERAL.CON-UUID:                       --
+GENERAL.CON-PATH:                       --
+GENERAL.METERED:                        unknown
+CAPABILITIES.CARRIER-DETECT:            yes
+CAPABILITIES.SPEED:                     unknown
+CAPABILITIES.IS-SOFTWARE:               no
+CAPABILITIES.SRIOV:                     no
+WIRED-PROPERTIES.CARRIER:               off
+CONNECTIONS.AVAILABLE-CONNECTION-PATHS: --
+
+SSID    BSSID              MODE   CHAN  FREQ      RATE        SIGNAL  BARS  SECURITY   ACTIVE  IN-USE 
+Vobeta  <MAC 'Vobeta' [AC1]>  Infra  1     2412 MHz  130 Mbit/s  76      ▂▄▆_  WPA1 WPA2  yes     *      
+
+##### NetworkManager.state ##############
+
+[main]
+NetworkingEnabled=true
+WirelessEnabled=true
+WWANEnabled=true
+
+##### NetworkManager config #############
+
+[[/etc/NetworkManager/conf.d/default-wifi-powersave-on.conf]]
+[connection]
+wifi.powersave = 3
+
+[[/etc/NetworkManager/NetworkManager.conf]]
+[main]
+plugins=ifupdown,keyfile
+[ifupdown]
+managed=false
+[device]
+wifi.scan-rand-mac-address=no
+
+[[/usr/lib/NetworkManager/conf.d/10-dns-resolved.conf]]
+[main]
+dns=systemd-resolved
+
+[[/usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf]]
+[keyfile]
+unmanaged-devices=*,except:type:wifi,except:type:wwan
+
+[[/usr/lib/NetworkManager/conf.d/20-connectivity-ubuntu.conf]]
+[connectivity]
+uri=http://connectivity-check.ubuntu.com/
+
+[[/usr/lib/NetworkManager/conf.d/no-mac-addr-change.conf]]
+[device-mac-addr-change-wifi]
+match-device=driver:rtl8723bs,driver:rtl8189es,driver:r8188eu,driver:8188eu,driver:eagle_sdio,driver:wl
+wifi.scan-rand-mac-address=no
+wifi.cloned-mac-address=preserve
+ethernet.cloned-mac-address=preserve
+
+##### NetworkManager profiles ###########
+
+[[/etc/NetworkManager/system-connections/PL Servis]] (600 root)
+[connection] id=PL Servis | type=wifi | permissions=
+[wifi] mac-address=<MAC 'wlp7s0b1' [IF2]> | mac-address-blacklist= | ssid=PL Servis
+[ipv4] method=auto
+[ipv6] method=auto
+
+[[/etc/NetworkManager/system-connections/Vobeta]] (600 root)
+[connection] id=Vobeta | type=wifi | permissions=
+[wifi] mac-address=<MAC 'wlp7s0b1' [IF2]> | mac-address-blacklist= | ssid=Vobeta
+[ipv4] method=auto
+[ipv6] method=auto
+
+##### Netplan config ####################
+
+[/etc/netplan/01-network-manager-all.yaml]
+network:
+  version: 2
+  renderer: NetworkManager
+
+##### iw reg get ########################
+
+Region: Europe/Belgrade (based on set time zone)
+
+global
+country 00: DFS-UNSET
+	(2402 - 2472 @ 40), (N/A, 20), (N/A)
+	(2457 - 2482 @ 20), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
+	(2474 - 2494 @ 20), (N/A, 20), (N/A), NO-OFDM, PASSIVE-SCAN
+	(5170 - 5250 @ 80), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
+	(5250 - 5330 @ 80), (N/A, 20), (0 ms), DFS, AUTO-BW, PASSIVE-SCAN
+	(5490 - 5730 @ 160), (N/A, 20), (0 ms), DFS, PASSIVE-SCAN
+	(5735 - 5835 @ 80), (N/A, 20), (N/A), PASSIVE-SCAN
+	(57240 - 63720 @ 2160), (N/A, 0), (N/A)
+
+##### iwlist channels ###################
+
+eno1      no frequency information.
+
+lo        no frequency information.
+
+wlp7s0b1  13 channels in total; available frequencies :
+          Channel 01 : 2.412 GHz
+          Channel 02 : 2.417 GHz
+          Channel 03 : 2.422 GHz
+          Channel 04 : 2.427 GHz
+          Channel 05 : 2.432 GHz
+          Channel 06 : 2.437 GHz
+          Channel 07 : 2.442 GHz
+          Channel 08 : 2.447 GHz
+          Channel 09 : 2.452 GHz
+          Channel 10 : 2.457 GHz
+          Channel 11 : 2.462 GHz
+          Channel 12 : 2.467 GHz
+          Channel 13 : 2.472 GHz
+          Current Frequency:2.412 GHz (Channel 1)
+
+##### iwlist scan #######################
+
+eno1      Interface doesn't support scanning.
+
+lo        Interface doesn't support scanning.
+
+Channel occupancy:
+
+      11   APs on   Frequency:2.412 GHz (Channel 1)
+      1   APs on   Frequency:2.422 GHz (Channel 3)
+      3   APs on   Frequency:2.427 GHz (Channel 4)
+      5   APs on   Frequency:2.437 GHz (Channel 6)
+      3   APs on   Frequency:2.442 GHz (Channel 7)
+      2   APs on   Frequency:2.447 GHz (Channel 8)
+      2   APs on   Frequency:2.457 GHz (Channel 10)
+      3   APs on   Frequency:2.462 GHz (Channel 11)
+      1   APs on   Frequency:2.467 GHz (Channel 12)
+
+wlp7s0b1  Scan completed :
+          Cell 01 - Address: <MAC 'Vobeta' [AC1]>
+                    Channel:1
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=70/70  Signal level=-40 dBm  
+                    Encryption key:on
+                    ESSID:"Vobeta"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=0000001ebd8d1512
+                    Extra: Last beacon: 24ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+                    IE: WPA Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+          Cell 02 - Address: <MAC '85a8e4' [AC2]>
+                    Channel:1
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=58/70  Signal level=-52 dBm  
+                    Encryption key:on
+                    ESSID:"85a8e4"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=0000000e94997f8b
+                    Extra: Last beacon: 24ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+                    IE: WPA Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+          Cell 03 - Address: <MAC '85a8e4-Guest' [AC3]>
+                    Channel:1
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=57/70  Signal level=-53 dBm  
+                    Encryption key:on
+                    ESSID:"85a8e4-Guest"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=0000000e9499b4f9
+                    Extra: Last beacon: 24ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : CCMP TKIP
+                        Authentication Suites (1) : PSK
+                    IE: WPA Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : CCMP TKIP
+                        Authentication Suites (1) : PSK
+          Cell 04 - Address: <MAC 'UniFi' [AC4]>
+                    Channel:1
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=57/70  Signal level=-53 dBm  
+                    Encryption key:on
+                    ESSID:"UniFi"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=0000000e9499bf57
+                    Extra: Last beacon: 24ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : 802.1x
+          Cell 05 - Address: <MAC 'Max' [AC5]>
+                    Channel:3
+                    Frequency:2.422 GHz (Channel 3)
+                    Quality=48/70  Signal level=-62 dBm  
+                    Encryption key:on
+                    ESSID:"Max"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 9 Mb/s
+                              18 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 12 Mb/s; 24 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=00000001c237844d
+                    Extra: Last beacon: 24ms ago
+                    IE: WPA Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+          Cell 06 - Address: <MAC 'UniFi' [AC6]>
+                    Channel:1
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=69/70  Signal level=-41 dBm  
+                    Encryption key:on
+                    ESSID:"UniFi"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=0000001ebd8d608e
+                    Extra: Last beacon: 24ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : 802.1x
+          Cell 07 - Address: <MAC 'UniFi' [AC7]>
+                    Channel:1
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=30/70  Signal level=-80 dBm  
+                    Encryption key:on
+                    ESSID:"UniFi"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s
+                              36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=000000beece0fa20
+                    Extra: Last beacon: 24ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : 802.1x
+          Cell 08 - Address: <MAC 'OpenScience' [AC8]>
+                    Channel:1
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=47/70  Signal level=-63 dBm  
+                    Encryption key:on
+                    ESSID:"OpenScience"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 22 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s
+                              36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=00000180afc647ea
+                    Extra: Last beacon: 24ms ago
+                    IE: WPA Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (1) : TKIP
+                        Authentication Suites (1) : PSK
+          Cell 09 - Address: <MAC '9abd54' [AC9]>
+                    Channel:1
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=30/70  Signal level=-80 dBm  
+                    Encryption key:on
+                    ESSID:"9abd54"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s
+                              36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=000000beece11861
+                    Extra: Last beacon: 24ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : CCMP TKIP
+                        Authentication Suites (1) : PSK
+                    IE: WPA Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : CCMP TKIP
+                        Authentication Suites (1) : PSK
+          Cell 10 - Address: <MAC 'Kaurin' [AC10]>
+                    Channel:1
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=29/70  Signal level=-81 dBm  
+                    Encryption key:on
+                    ESSID:"Kaurin"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=00000002c0941195
+                    Extra: Last beacon: 580ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : CCMP TKIP
+                        Authentication Suites (1) : PSK
+                    IE: WPA Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : CCMP TKIP
+                        Authentication Suites (1) : PSK
+          Cell 11 - Address: <MAC 'GradNoviSad' [AC11]>
+                    Channel:1
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=28/70  Signal level=-82 dBm  
+                    Encryption key:off
+                    ESSID:"GradNoviSad"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s
+                    Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=000000253e98448a
+                    Extra: Last beacon: 320ms ago
+          Cell 12 - Address: <MAC 'Huavej' [AC12]>
+                    Channel:6
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=39/70  Signal level=-71 dBm  
+                    Encryption key:on
+                    ESSID:"Huavej"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s
+                              36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=0000009c10d406cc
+                    Extra: Last beacon: 1728ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (1) : TKIP
+                        Authentication Suites (1) : PSK
+          Cell 13 - Address: <MAC 'Maja Senic' [AC13]>
+                    Channel:4
+                    Frequency:2.427 GHz (Channel 4)
+                    Quality=39/70  Signal level=-71 dBm  
+                    Encryption key:on
+                    ESSID:"Maja Senic"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=00000010bfa711a0
+                    Extra: Last beacon: 1724ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+                    IE: WPA Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+          Cell 14 - Address: <MAC 'TX-HOME' [AC14]>
+                    Channel:4
+                    Frequency:2.427 GHz (Channel 4)
+                    Quality=22/70  Signal level=-88 dBm  
+                    Encryption key:on
+                    ESSID:"TX-HOME"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s
+                    Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=0000025cb1d7e1e8
+                    Extra: Last beacon: 1716ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+          Cell 15 - Address: <MAC 'DIRECT-D0-HP DeskJet 4670 series' [AC15]>
+                    Channel:6
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=39/70  Signal level=-71 dBm  
+                    Encryption key:on
+                    ESSID:"DIRECT-D0-HP DeskJet 4670 series"
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s
+                              36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=0000025cb0374a9c
+                    Extra: Last beacon: 24ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+          Cell 16 - Address: <MAC 'Moma' [AC16]>
+                    Channel:6
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=49/70  Signal level=-61 dBm  
+                    Encryption key:on
+                    ESSID:"Moma"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=0000001b5626a4fa
+                    Extra: Last beacon: 24ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : CCMP TKIP
+                        Authentication Suites (1) : PSK
+                    IE: WPA Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : CCMP TKIP
+                        Authentication Suites (1) : PSK
+          Cell 17 - Address: <MAC 'UniFi' [AC17]>
+                    Channel:6
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=45/70  Signal level=-65 dBm  
+                    Encryption key:on
+                    ESSID:"UniFi"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=0000001b562b4a17
+                    Extra: Last beacon: 1072ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : 802.1x
+          Cell 18 - Address: <MAC '' [AC18]>
+                    Channel:1
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=28/70  Signal level=-82 dBm  
+                    Encryption key:off
+                    ESSID:""
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s
+                    Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=000000253e984184
+                    Extra: Last beacon: 320ms ago
+          Cell 19 - Address: <MAC 'UniFi' [AC19]>
+                    Channel:4
+                    Frequency:2.427 GHz (Channel 4)
+                    Quality=42/70  Signal level=-68 dBm  
+                    Encryption key:on
+                    ESSID:"UniFi"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=00000010bfabbf90
+                    Extra: Last beacon: 24ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : 802.1x
+          Cell 20 - Address: <MAC '36DDC0' [AC20]>
+                    Channel:6
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=27/70  Signal level=-83 dBm  
+                    Encryption key:on
+                    ESSID:"36DDC0"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=000000104ca4e188
+                    Extra: Last beacon: 1356ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : CCMP TKIP
+                        Authentication Suites (1) : PSK
+                    IE: WPA Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : CCMP TKIP
+                        Authentication Suites (1) : PSK
+          Cell 21 - Address: <MAC 'TP-LINK_623A' [AC21]>
+                    Channel:8
+                    Frequency:2.447 GHz (Channel 8)
+                    Quality=35/70  Signal level=-75 dBm  
+                    Encryption key:on
+                    ESSID:"TP-LINK_623A"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s
+                    Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=0000025cb1b98cfd
+                    Extra: Last beacon: 20ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+          Cell 22 - Address: <MAC 'STANKA' [AC22]>
+                    Channel:7
+                    Frequency:2.442 GHz (Channel 7)
+                    Quality=23/70  Signal level=-87 dBm  
+                    Encryption key:on
+                    ESSID:"STANKA"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=00000146bf634199
+                    Extra: Last beacon: 1124ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+          Cell 23 - Address: <MAC 'Damjanac' [AC23]>
+                    Channel:7
+                    Frequency:2.442 GHz (Channel 7)
+                    Quality=33/70  Signal level=-77 dBm  
+                    Encryption key:on
+                    ESSID:"Damjanac"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=00000001a31f6d9f
+                    Extra: Last beacon: 24ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : CCMP TKIP
+                        Authentication Suites (1) : PSK
+                    IE: WPA Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : CCMP TKIP
+                        Authentication Suites (1) : PSK
+          Cell 24 - Address: <MAC 'UniFi' [AC24]>
+                    Channel:7
+                    Frequency:2.442 GHz (Channel 7)
+                    Quality=33/70  Signal level=-77 dBm  
+                    Encryption key:on
+                    ESSID:"UniFi"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=00000001a31f7b85
+                    Extra: Last beacon: 24ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : 802.1x
+                    IE: WPA Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : 802.1x
+          Cell 25 - Address: <MAC 'ZTE8354AA' [AC25]>
+                    Channel:8
+                    Frequency:2.447 GHz (Channel 8)
+                    Quality=32/70  Signal level=-78 dBm  
+                    Encryption key:on
+                    ESSID:"ZTE8354AA"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 9 Mb/s
+                              18 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 12 Mb/s; 24 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=000000673db6e424
+                    Extra: Last beacon: 24ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+          Cell 26 - Address: <MAC 'UniFi' [AC26]>
+                    Channel:11
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=54/70  Signal level=-56 dBm  
+                    Encryption key:on
+                    ESSID:"UniFi"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=0000001ae884e83d
+                    Extra: Last beacon: 20ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : 802.1x
+          Cell 27 - Address: <MAC 'DoktorantiSRB' [AC27]>
+                    Channel:10
+                    Frequency:2.457 GHz (Channel 10)
+                    Quality=50/70  Signal level=-60 dBm  
+                    Encryption key:on
+                    ESSID:"DoktorantiSRB"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=0000025ca3d3a1ea
+                    Extra: Last beacon: 20ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : CCMP TKIP
+                        Authentication Suites (1) : PSK
+                    IE: WPA Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : CCMP TKIP
+                        Authentication Suites (1) : PSK
+          Cell 28 - Address: <MAC 'mokshaizeka' [AC28]>
+                    Channel:11
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=48/70  Signal level=-62 dBm  
+                    Encryption key:on
+                    ESSID:"mokshaizeka"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=0000001ae8848d97
+                    Extra: Last beacon: 20ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+                    IE: WPA Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+          Cell 29 - Address: <MAC 'UniFi' [AC29]>
+                    Channel:10
+                    Frequency:2.457 GHz (Channel 10)
+                    Quality=49/70  Signal level=-61 dBm  
+                    Encryption key:on
+                    ESSID:"UniFi"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=0000025ca3d3c0b3
+                    Extra: Last beacon: 20ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : 802.1x
+          Cell 30 - Address: <MAC 'c67a00' [AC30]>
+                    Channel:11
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=32/70  Signal level=-78 dBm  
+                    Encryption key:on
+                    ESSID:"c67a00"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=0000007a02a97189
+                    Extra: Last beacon: 444ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+                    IE: WPA Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+          Cell 31 - Address: <MAC 'dlink-0A3B' [AC31]>
+                    Channel:12
+                    Frequency:2.467 GHz (Channel 12)
+                    Quality=36/70  Signal level=-74 dBm  
+                    Encryption key:on
+                    ESSID:"dlink-0A3B"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 9 Mb/s
+                              18 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 12 Mb/s; 24 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=000001a9587a01a7
+                    Extra: Last beacon: 352ms ago
+                    IE: WPA Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : TKIP CCMP
+                        Authentication Suites (1) : PSK
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : TKIP CCMP
+                        Authentication Suites (1) : PSK
+
+##### module infos ######################
+
+[brcmsmac]
+filename:       /lib/modules/4.18.0-25-generic/kernel/drivers/net/wireless/broadcom/brcm80211/brcmsmac/brcmsmac.ko
+firmware:       brcm/bcm43xx_hdr-0.fw
+firmware:       brcm/bcm43xx-0.fw
+license:        Dual BSD/GPL
+description:    Broadcom 802.11n wireless LAN driver.
+author:         Broadcom Corporation
+srcversion:     4BEB6B7AE55429E2BCAC16F
+depends:        mac80211,bcma,brcmutil,cfg80211,cordic
+retpoline:      Y
+intree:         Y
+name:           brcmsmac
+vermagic:       4.18.0-25-generic SMP mod_unload 
+signat:         PKCS#7
+signer:         
+sig_key:        
+sig_hashalgo:   md4
+
+[brcmutil]
+filename:       /lib/modules/4.18.0-25-generic/kernel/drivers/net/wireless/broadcom/brcm80211/brcmutil/brcmutil.ko
+license:        Dual BSD/GPL
+description:    Broadcom 802.11n wireless LAN driver utilities.
+author:         Broadcom Corporation
+srcversion:     DB47FBEFD2FBEAACFB87E67
+depends:        
+retpoline:      Y
+intree:         Y
+name:           brcmutil
+vermagic:       4.18.0-25-generic SMP mod_unload 
+signat:         PKCS#7
+signer:         
+sig_key:        
+sig_hashalgo:   md4
+
+[b43]
+filename:       /lib/modules/4.18.0-25-generic/kernel/drivers/net/wireless/broadcom/b43/b43.ko
+firmware:       b43/ucode9.fw
+firmware:       b43/ucode42.fw
+firmware:       b43/ucode40.fw
+firmware:       b43/ucode5.fw
+firmware:       b43/ucode30_mimo.fw
+firmware:       b43/ucode33_lcn40.fw
+firmware:       b43/ucode29_mimo.fw
+firmware:       b43/ucode26_mimo.fw
+firmware:       b43/ucode25_mimo.fw
+firmware:       b43/ucode25_lcn.fw
+firmware:       b43/ucode24_lcn.fw
+firmware:       b43/ucode16_mimo.fw
+firmware:       b43/ucode16_lp.fw
+firmware:       b43/ucode15.fw
+firmware:       b43/ucode14.fw
+firmware:       b43/ucode13.fw
+firmware:       b43/ucode11.fw
+license:        GPL
+author:         Rafał Miłecki
+author:         Gábor Stefanik
+author:         Michael Buesch
+author:         Stefano Brivio
+author:         Martin Langer
+description:    Broadcom B43 wireless driver
+srcversion:     F4C4F20E18BD2B0E5D000E6
+depends:        mac80211,ssb,bcma,cfg80211
+retpoline:      Y
+intree:         Y
+name:           b43
+vermagic:       4.18.0-25-generic SMP mod_unload 
+signat:         PKCS#7
+signer:         
+sig_key:        
+sig_hashalgo:   md4
+parm:           bad_frames_preempt:enable(1) / disable(0) Bad Frames Preemption (int)
+parm:           fwpostfix:Postfix for the .fw files to load. (string)
+parm:           hwpctl:Enable hardware-side power control (default off) (int)
+parm:           nohwcrypt:Disable hardware encryption. (int)
+parm:           hwtkip:Enable hardware tkip. (int)
+parm:           qos:Enable QOS support (default on) (int)
+parm:           btcoex:Enable Bluetooth coexistence (default on) (int)
+parm:           verbose:Log message verbosity: 0=error, 1=warn, 2=info(default), 3=debug (int)
+parm:           pio:Use PIO accesses by default: 0=DMA, 1=PIO (int)
+parm:           allhwsupport:Enable support for all hardware (even it if overlaps with the brcmsmac driver) (int)
+
+[mac80211]
+filename:       /lib/modules/4.18.0-25-generic/kernel/net/mac80211/mac80211.ko
+license:        GPL
+description:    IEEE 802.11 subsystem
+srcversion:     C5D73328CD704BB6E363074
+depends:        cfg80211
+retpoline:      Y
+intree:         Y
+name:           mac80211
+vermagic:       4.18.0-25-generic SMP mod_unload 
+signat:         PKCS#7
+signer:         
+sig_key:        
+sig_hashalgo:   md4
+parm:           minstrel_vht_only:Use only VHT rates when VHT is supported by sta. (bool)
+parm:           max_nullfunc_tries:Maximum nullfunc tx tries before disconnecting (reason 4). (int)
+parm:           max_probe_tries:Maximum probe tries before disconnecting (reason 4). (int)
+parm:           beacon_loss_count:Number of beacon intervals before we decide beacon was lost. (int)
+parm:           probe_wait_ms:Maximum time(ms) to wait for probe response before disconnecting (reason 4). (int)
+parm:           ieee80211_default_rc_algo:Default rate control algorithm for mac80211 to use (charp)
+
+[cfg80211]
+filename:       /lib/modules/4.18.0-25-generic/kernel/net/wireless/cfg80211.ko
+description:    wireless configuration support
+license:        GPL
+author:         Johannes Berg
+srcversion:     9388DCE7F64620803B0EC6E
+depends:        
+retpoline:      Y
+intree:         Y
+name:           cfg80211
+vermagic:       4.18.0-25-generic SMP mod_unload 
+signat:         PKCS#7
+signer:         
+sig_key:        
+sig_hashalgo:   md4
+parm:           bss_entries_limit:limit to number of scan BSS entries (per wiphy, default 1000) (int)
+parm:           ieee80211_regdom:IEEE 802.11 regulatory domain code (charp)
+parm:           cfg80211_disable_40mhz_24ghz:Disable 40MHz support in the 2.4GHz band (bool)
+
+[ssb]
+filename:       /lib/modules/4.18.0-25-generic/kernel/drivers/ssb/ssb.ko
+license:        GPL
+description:    Sonics Silicon Backplane driver
+srcversion:     F3EAB59AC9D667714E87F1B
+depends:        
+retpoline:      Y
+intree:         Y
+name:           ssb
+vermagic:       4.18.0-25-generic SMP mod_unload 
+signat:         PKCS#7
+signer:         
+sig_key:        
+sig_hashalgo:   md4
+
+[bcma]
+filename:       /lib/modules/4.18.0-25-generic/kernel/drivers/bcma/bcma.ko
+license:        GPL
+description:    Broadcom's specific AMBA driver
+srcversion:     A58277A768AAB23C742A248
+depends:        
+retpoline:      Y
+intree:         Y
+name:           bcma
+vermagic:       4.18.0-25-generic SMP mod_unload 
+signat:         PKCS#7
+signer:         
+sig_key:        
+sig_hashalgo:   md4
+
+##### module parameters #################
+
+[b43]
+allhwsupport: 0
+bad_frames_preempt: 0
+btcoex: 1
+hwpctl: 0
+hwtkip: 0
+nohwcrypt: 0
+pio: 0
+qos: 1
+verbose: 2
+
+[mac80211]
+beacon_loss_count: 7
+ieee80211_default_rc_algo: minstrel_ht
+max_nullfunc_tries: 2
+max_probe_tries: 5
+minstrel_vht_only: Y
+probe_wait_ms: 500
+
+[cfg80211]
+bss_entries_limit: 1000
+cfg80211_disable_40mhz_24ghz: N
+ieee80211_regdom: 00
+
+##### /etc/modules ######################
+
+##### modprobe options ##################
+
+[/etc/modprobe.d/amd64-microcode-blacklist.conf]
+blacklist microcode
+
+[/etc/modprobe.d/blacklist-ath_pci.conf]
+blacklist ath_pci
+
+[/etc/modprobe.d/blacklist.conf]
+blacklist evbug
+blacklist usbmouse
+blacklist usbkbd
+blacklist eepro100
+blacklist de4x5
+blacklist eth1394
+blacklist snd_intel8x0m
+blacklist snd_aw2
+blacklist i2c_i801
+blacklist prism54
+blacklist bcm43xx
+blacklist garmin_gps
+blacklist asus_acpi
+blacklist snd_pcsp
+blacklist pcspkr
+blacklist amd76x_edac
+
+[/etc/modprobe.d/blacklist-rare-network.conf]
+alias net-pf-3 off
+alias net-pf-6 off
+alias net-pf-9 off
+alias net-pf-11 off
+alias net-pf-12 off
+alias net-pf-19 off
+alias net-pf-21 off
+alias net-pf-36 off
+
+[/etc/modprobe.d/intel-microcode-blacklist.conf]
+blacklist microcode
+
+[/etc/modprobe.d/iwlwifi.conf]
+remove iwlwifi \
+(/sbin/lsmod | grep -o -e ^iwlmvm -e ^iwldvm -e ^iwlwifi | xargs /sbin/rmmod) \
+&& /sbin/modprobe -r mac80211
+
+##### rc.local ##########################
+
+grep: /etc/rc.local: No such file or directory
+
+##### pm-utils ##########################
+
+##### udev rules ########################
+
+##### dmesg #############################
+
+########## wireless info END ############
+

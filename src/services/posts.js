@@ -14,7 +14,11 @@ export default class PostService {
     }
 
     submitPost(newPost) {
-        return axios.post( '/posts' ,newPost)
+        return axios.post('posts' ,newPost);
+    }
+
+    editPost(id, editedPost) {
+        return axios.put('posts/'+id, editedPost);
     }
 }
 

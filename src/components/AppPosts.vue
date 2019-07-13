@@ -6,6 +6,8 @@
          <router-link class="btn btn-light" v-bind:to="dynamicId(post.id)" name="posts">View posts</router-link>
       </li>
       <p>{{ post.text }}</p>
+         <router-link class="btn btn-light" :to="'/add/' + post.id">EDIT</router-link>    
+      <hr>
     </ul>
   </div>
 </template>

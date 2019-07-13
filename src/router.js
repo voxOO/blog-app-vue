@@ -12,7 +12,8 @@ const routes = [
     { path: '/', redirect: '/posts'},
     { path: '/posts', component: AppPosts},
     { path: '/post/:id', component: SinglePost },
-    { path: '/add', component: AddPost}
+    { path: '/add', component: AddPost},
+    { path: '/add/:id' , component: AddPost}
 ]
 
 export const router = new VueRouter({
