@@ -6,7 +6,8 @@
          <router-link class="btn btn-light" v-bind:to="dynamicId(post.id)" name="posts">View posts</router-link>
       </li>
       <p>{{ post.text }}</p>
-         <router-link class="btn btn-light" :to="'/add/' + post.id">EDIT</router-link>    
+         <router-link class="btn btn-light" :to="'/add/' + post.id">EDIT</router-link>  
+         <button class="btn btn-light" @click="deletePost(post.id)" >DELETE</button>
       <hr>
     </ul>
   </div>
@@ -24,7 +25,14 @@ export default {
   methods: {
     dynamicId(id) {
       return "/post/" + id; 
-    }
+    },
+    deletePost(id) {
+    postService.deletePost(id)
+    .then(response => {this.$router.go()})
+    .catch(e=> {
+        this.errors.push(e);
+    })
+   }
   },
   computed: {
    
