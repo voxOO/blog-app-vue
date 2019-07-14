@@ -3,7 +3,7 @@
     <ul v-for="post in posts" :key="post.id">
       <li>
         {{ post.title }}
-         <router-link class="btn btn-light" v-bind:to="dynamicId(post.id)" name="posts">View posts</router-link>
+         <router-link class="btn btn-light" v-bind:to="dynamicId(post.id)" name="posts">View post</router-link>
       </li>
       <p>{{ post.text }}</p>
          <router-link class="btn btn-light" :to="'/add/' + post.id">EDIT</router-link>  
@@ -41,6 +41,7 @@ export default {
     postService.getAll().then(response => {
       this.posts = response.data;
       //console.log(response)
+      console.log(this.posts.comments)
     });
     //Thnis will call service
   }

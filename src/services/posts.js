@@ -7,12 +7,14 @@ export default class PostService {
 
     getAll() {
         return axios.get('posts');
+        //return axios.get('posts?filter={"inlude":["comments"]}')
     }
 
     getSinglePost (id) {
-        return axios.get(`posts/${id}`);
+        //return axios.get(`posts/${id}`);
+        return axios.get('posts/' + id + '?' + 'filter={"include":["comments"]}')
     }
-
+    //api/posts/{id}?filter={"include":["comments"]}
     submitPost(newPost) {
         return axios.post('posts' ,newPost);
     }
@@ -23,6 +25,10 @@ export default class PostService {
 
     deletePost(id) {
         return axios.delete('posts/' + id);
+    }
+
+    addComment(comment, postId) {
+        return axios.post('posts/' + postId + '/comments', comment);
     }
 }
 
