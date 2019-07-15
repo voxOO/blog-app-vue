@@ -2,13 +2,13 @@
     <div class="container">
         <div>
             <h3>
-                {{ singlePost.title}}
+                {{ singlePost.title }}
             </h3>
             <p>
-                {{ singlePost.text}}
+                {{ singlePost.text }}
             </p>
             <p>
-                {{ singlePost.createdAt}}
+                <i>{{ dateFormat(singlePost.createdAt) }}</i>
             </p>
         </div>
         <div>
@@ -30,7 +30,7 @@
                     {{ comment.text }}
                 </li>
                 <p>
-                    <i>{{ comment.createdAt }}</i>
+                    <i>{{ diffForHumans(comment.createdAt) }}</i>
                 </p>
             </ul>
         </div>
@@ -39,8 +39,11 @@
 
 <script>
 import { postService } from "../services/posts";
+import { DateMixin } from "../Mixins/DateMixin"
+
 
 export default {
+    mixins: [DateMixin], 
     data () {
         return {
             singlePost: [],
@@ -52,8 +55,8 @@ export default {
      created() {
         postService.getSinglePost(this.$route.params.id).then(response => {
         this.singlePost = response.data;
-        console.log(this.singlePost);
-        console.log(this.singlePost.comments[0].text)
+        //console.log(this.singlePost);
+        //console.log(this.singlePost.comments[0].text)
     });
   },
   methods: {
@@ -64,7 +67,8 @@ export default {
              this.errors.push(e);
          })
      }
-  }
+  },
+
 }
 </script>
 
